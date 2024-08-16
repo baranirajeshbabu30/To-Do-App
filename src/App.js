@@ -7,7 +7,6 @@ import AddTodoForm from './components/AddTodoForm';
 import TodoItem from './components/TodoItem';
 import CategoryFilter from './components/CategoryFilter';
 import HomePage from './layout/Homepage';
-import Welcome from './layout/Welcome';
 import Upcoming from './components/Upcoming';
 import Layout from './layout/Homepage';
 
@@ -16,7 +15,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>

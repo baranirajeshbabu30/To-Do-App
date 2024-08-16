@@ -13,12 +13,9 @@ const Header = ({ searchTerm, setSearchTerm }) => {
         const storedToken = localStorage.getItem('token');
         const storedUseremail = localStorage.getItem('useremail');
         const storedDarkMode = localStorage.getItem('darkMode') === 'true';
-
-        if (storedToken) {
-            setToken(storedToken);
-            setUseremail(storedUseremail || '');
-        }
-
+console.log('useremail', storedUseremail, storedDarkMode)
+       
+        setUseremail(storedUseremail);
         setDarkMode(storedDarkMode);
         document.body.classList.toggle('dark-mode', storedDarkMode);
     }, []);
