@@ -53,7 +53,7 @@ const Login = () => {
                     </div>
                     <button type="submit">Login</button>
                 </form>
-               <p>New User Register here <a onClick={handleSignupClick} className="signup-button"> Signup</a></p> 
+               <p>New User Register here <button onClick={handleSignupClick} className="signup-button"> Signup</button></p> 
             </div>
         </div>
     );
