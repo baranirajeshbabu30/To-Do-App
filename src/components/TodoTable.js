@@ -10,6 +10,7 @@ const TodoTable = ({ title, todos, onEdit, onDelete, onComplete }) => {
   };
 
   return (
+    
     <div className="todo-card-with-table">
       <div className="card-header">
         <h2>{title}</h2>

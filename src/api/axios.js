@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/api', 
+  baseURL: 'https://stellar-paprenjak-9c8f74.netlify.app/.netlify/functions', 
   headers: {
     'Content-Type': 'application/json',
   },
