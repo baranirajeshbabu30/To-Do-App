@@ -14,7 +14,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             await axios.post('/auth/signup', { username, password, useremail });
-            toast.signup('User singedup successfully.');
+            toast.success('User singedup successfully.');
             navigate('/login'); 
         } catch (error) {
             console.error('Signup error:', error);

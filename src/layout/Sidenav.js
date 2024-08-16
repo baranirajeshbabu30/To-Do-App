@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Drawer, List, ListItem, ListItemText, Divider, CircularProgress, Snackbar } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText, Divider, CircularProgress, Snackbar, IconButton } from '@mui/material';
 import useTodos from '../hooks/useTodos';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 
 const Sidenav = () => {
   const [openCategory, setOpenCategory] = useState(false);
@@ -22,8 +23,8 @@ const Sidenav = () => {
           '& .MuiDrawer-paper': {
             width: 240,
             boxSizing: 'border-box',
-            marginTop: 8,
-            height: 550,
+            marginTop: 10.5,
+            height: 450,
           },
         }}
         className="sidenav-drawer"
@@ -39,6 +40,9 @@ const Sidenav = () => {
           <Divider />
           <ListItem button onClick={() => setOpenCategory(!openCategory)}>
             <ListItemText primary="Category" />
+            <IconButton edge="end">
+                {openCategory ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
           </ListItem>
           {openCategory && (
             <List component="div" disablePadding>

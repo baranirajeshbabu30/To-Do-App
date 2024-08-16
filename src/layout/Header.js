@@ -11,7 +11,6 @@ const Header = ({ searchTerm, setSearchTerm }) => {
     useEffect(() => {
         const storedUseremail = localStorage.getItem('useremail');
         const storedDarkMode = localStorage.getItem('darkMode') === 'true';
-console.log('useremail', storedUseremail, storedDarkMode)
        
         setUseremail(storedUseremail);
         setDarkMode(storedDarkMode);
@@ -47,7 +46,7 @@ console.log('useremail', storedUseremail, storedDarkMode)
                 </button>
                 <div className="profile">
                     <div className="profile-icon" onClick={toggleDropdown}>
-                        <div className="profile-name" />profile
+                        <h3 className="profile-name" >profile</h3>
                     </div>
                     {dropdownVisible && (
                         <ul className="profile-dropdown">
