@@ -65,7 +65,7 @@ const TodoItem = () => {
 
       <div className="todo-item-container">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <div>click on the table cell to see description</div>
+      <div class='hint'>click on the table cell to see description</div>
 
         <div className="todo-list">
           {Object.keys(groupedTodos).map((month) => (

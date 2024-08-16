@@ -23,7 +23,7 @@ const useTodos = () => {
 
     setLoading(true);
     try {
-      const response = await axios.get(`/todo/${userId}`);
+      const response = await axios.get(`task/todo/${userId}`);
       saveTodos(response.data);
     } catch (err) {
       console.error('Error fetching todos:', err);
@@ -36,7 +36,7 @@ const useTodos = () => {
   const fetchCategories = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get('/todo/category'); 
+      const response = await axios.get('task/todo/category'); 
       setCategories(response.data);
     } catch (err) {
       console.error('Error fetching categories:', err);
@@ -54,7 +54,7 @@ const useTodos = () => {
   const addTodo = useCallback(async (todo) => {
     setLoading(true);
     try {
-      const response = await axios.post('/todo', { ...todo, userId });
+      const response = await axios.post('task/todo', { ...todo, userId });
       const newTodos = [...todos, response.data];
       saveTodos(newTodos);
     } catch (err) {
@@ -68,7 +68,7 @@ const useTodos = () => {
   const updateTodo = useCallback(async (updatedTodo) => {
     setLoading(true);
     try {
-      const response = await axios.put(`/todo/${updatedTodo._id}`, updatedTodo);
+      const response = await axios.put(`task/todo/${updatedTodo._id}`, updatedTodo);
       const updatedTodos = todos.map(todo => 
         todo._id === updatedTodo._id ? response.data : todo
       );
@@ -84,7 +84,7 @@ const useTodos = () => {
   const deleteTodo = useCallback(async (id) => {
     setLoading(true);
     try {
-      await axios.delete(`/todo/${id}`);
+      await axios.delete(`task/todo/${id}`);
       const updatedTodos = todos.filter(todo => todo._id !== id);
       saveTodos(updatedTodos);
     } catch (err) {
