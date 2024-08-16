@@ -12,7 +12,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/signup', { username, password, useremail });
+            await axios.post('/auth/signup', { username, password, useremail });
             navigate('/login'); 
         } catch (error) {
             console.error('Signup error:', error);
