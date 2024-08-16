@@ -1,0 +1,60 @@
+.todo-card-with-table {
+    max-width: 600px;
+    margin-left: 500px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .card-header {
+    background-color: #f4f4f4;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .todo-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .todo-table th, .todo-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .todo-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .subtable-content {
+    padding: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .subtable {
+    background-color: #f9f9f9;
+  }
+  
+  .no-todos {
+    text-align: center;
+    padding: 16px;
+  }
+  
+  button {
+    margin: 0 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  

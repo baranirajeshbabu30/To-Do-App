@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './components/ThemeContext';
+import Login from './authentication/Login';
+import Signup from './authentication/Signup';
+import AddTodoForm from './components/AddTodoForm';
+import TodoItem from './components/TodoItem';
+import CategoryFilter from './components/CategoryFilter';
+import HomePage from './layout/Homepage';
+import Welcome from './layout/Welcome';
+import Upcoming from './components/Upcoming';
+import Layout from './layout/Homepage';
 
-function App() {
+const App = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route element={<Layout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/add-todo" element={<AddTodoForm />} />
+          <Route path="/edit-todo/:id" element={<AddTodoForm />} />
+          <Route path="/todo-list" element={<TodoItem searchTerm={searchTerm} />} />
+          <Route path="/category/:category" element={<CategoryFilter />} />
 
-export default App;
+          <Route path="/upcoming" element={<Upcoming />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
+
+const AppWrapper = () => (
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
+);
+
+export default AppWrapper;
