@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 import './Auth.css'; 
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [useremail, setUseremail] = useState('');
@@ -18,9 +19,10 @@ const Login = () => {
             localStorage.setItem('useremail', responseEmail);
 
             navigate('/todo-list');
-            alert('login success') 
+            toast.success('Login successful!');
         } catch (error) {
             console.error('Login error:', error);
+            toast.error('Login failed. Please try again.');
         }
     };
 

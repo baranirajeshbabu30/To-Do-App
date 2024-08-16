@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 import './Auth.css'; 
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [username, setUsername] = useState('');
@@ -13,9 +14,11 @@ const Signup = () => {
         e.preventDefault();
         try {
             await axios.post('/auth/signup', { username, password, useremail });
+            toast.signup('User singedup successfully.');
             navigate('/login'); 
         } catch (error) {
             console.error('Signup error:', error);
+            toast.error('signup failed. Please try again.');
         }
     };
 

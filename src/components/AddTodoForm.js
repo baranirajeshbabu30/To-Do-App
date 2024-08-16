@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useTodos from '../hooks/useTodos';
 import { useForm, Controller } from 'react-hook-form';
 import '../components/AddTodoForm.css';
+import { toast } from 'react-toastify';
 
 const categories = ['Work', 'Personal', 'Study', 'Other'];
 
@@ -48,9 +49,11 @@ const AddTodoForm = () => {
       } else {
         await addTodo(updatedTodo);
       }
+      toast.success('data added successfully.');
       navigate('/todo-list');
     } catch (err) {
       console.error('Error saving task:', err);
+      toast.error('error adding task.');
     }
   };
 

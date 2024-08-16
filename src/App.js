@@ -9,11 +9,13 @@ import CategoryFilter from './components/CategoryFilter';
 import HomePage from './layout/Homepage';
 import Upcoming from './components/Upcoming';
 import Layout from './layout/Homepage';
+import ToastProvider from './layout/ToastProvider';
 
 const App = () => {
 
   return (
     <Router>
+      <ToastProvider>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -28,6 +30,7 @@ const App = () => {
           <Route path="/upcoming" element={<Upcoming />} />
         </Route>
       </Routes>
+      </ToastProvider>
     </Router>
   );
 };
