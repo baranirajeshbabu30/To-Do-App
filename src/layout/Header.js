@@ -5,12 +5,10 @@ import '../layout/Header.css';
 const Header = ({ searchTerm, setSearchTerm }) => {
     const navigate = useNavigate();
     const [useremail, setUseremail] = useState('');
-    const [token, setToken] = useState('');
     const [darkMode, setDarkMode] = useState(false);
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     useEffect(() => {
-        const storedToken = localStorage.getItem('token');
         const storedUseremail = localStorage.getItem('useremail');
         const storedDarkMode = localStorage.getItem('darkMode') === 'true';
 console.log('useremail', storedUseremail, storedDarkMode)
@@ -28,11 +26,9 @@ console.log('useremail', storedUseremail, storedDarkMode)
     };
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
         localStorage.removeItem('useremail');
         localStorage.removeItem('darkMode');
         setUseremail('');
-        setToken('');
         navigate('/login'); 
     };
 
