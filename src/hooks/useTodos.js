@@ -96,11 +96,7 @@ const useTodos = () => {
   }, [todos, saveTodos]);
 
   const filteredTodos = useMemo(() => {
-    console.log('Filtering todos with:', {
-      filter,
-      selectedCategory,
-      searchTerm
-    });
+  
   
     return todos.filter(todo => {
       const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -108,19 +104,14 @@ const useTodos = () => {
       const lowerCaseCategory = todo.category.toLowerCase();
       const lowerCaseProgress = todo.progress.toLowerCase();
       
-      // Debug each todo item
-      console.log('Todo:', todo);
 
       if (filter === 'active' && todo.progress === 'completed') {
-        console.log('Filtered out (active):', todo);
         return false;
       }
       if (filter === 'completed' && todo.progress === 'active') {
-        console.log('Filtered out (completed):', todo);
         return false;
       }
       if (selectedCategory !== 'All' && todo.category !== selectedCategory) {
-        console.log('Filtered out (category):', todo);
         return false;
       }
       if (searchTerm) {
@@ -128,8 +119,6 @@ const useTodos = () => {
         const matchCategory = lowerCaseCategory.includes(lowerCaseSearchTerm);
         const matchProgress = lowerCaseProgress.includes(lowerCaseSearchTerm);
 
-        // Debug matching conditions
-        console.log('Matches:', { matchTitle, matchCategory, matchProgress });
 
         return matchTitle || matchCategory || matchProgress;
       }

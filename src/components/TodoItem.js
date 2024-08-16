@@ -25,11 +25,7 @@ const TodoItem = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  // Debug log todos and searchTerm
-  console.log('Todos:', todos);
-  console.log('SearchTerm:', searchTerm);
 
-  // Filter todos based on searchTerm
   const filteredTodos = todos.filter(todo => {
     const searchLower = searchTerm.toLowerCase();
     const titleMatch = todo.title.toLowerCase().includes(searchLower);
@@ -37,16 +33,10 @@ const TodoItem = () => {
     const categoryMatch = todo.category.toLowerCase().includes(searchLower);
     const progressMatch = todo.progress.toLowerCase().includes(searchLower);
 
-    console.log('Filtering todo:', todo);
-    console.log('Title Match:', titleMatch);
-    console.log('Description Match:', descriptionMatch);
-    console.log('Category Match:', categoryMatch);
-    console.log('Progress Match:', progressMatch);
 
     return titleMatch || descriptionMatch || categoryMatch || progressMatch;
   });
 
-  // Group todos by month
   const groupedTodos = groupTodosByMonth(filteredTodos);
 
   const handleEdit = (todo) => {

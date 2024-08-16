@@ -8,9 +8,9 @@ const categories = ['Work', 'Personal', 'Study', 'Other'];
 
 const AddTodoForm = () => {
   const { addTodo, updateTodo, todos } = useTodos();
-  const { id } = useParams(); // Get the todo ID from the URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
-  const { control, handleSubmit, setValue, getValues, formState: { errors } } = useForm({
+  const { control, handleSubmit, setValue,  formState: { errors } } = useForm({
     defaultValues: {
       title: '',
       description: '',

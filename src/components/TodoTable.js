@@ -35,11 +35,9 @@ const TodoTable = ({ title, todos, onEdit, onDelete, onComplete }) => {
                     <td>{todo.category}</td>
                     <td>{todo.progress}</td>
                     <td>
-                      {/* Always show Edit and Delete buttons */}
                       <button onClick={(e) => { e.stopPropagation(); onEdit(todo); }}>Edit</button>
                       <button onClick={(e) => { e.stopPropagation(); onDelete(todo._id); }}>Delete</button>
                       
-                      {/* Conditionally show Mark as Completed button */}
                       {todo.progress !== 'completed' && (
                         <button 
                           onClick={(e) => { e.stopPropagation(); onComplete(todo._id); }}

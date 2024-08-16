@@ -13,12 +13,12 @@ const Header = ({ searchTerm, setSearchTerm }) => {
         const storedToken = localStorage.getItem('token');
         const storedUseremail = localStorage.getItem('useremail');
         const storedDarkMode = localStorage.getItem('darkMode') === 'true';
-        
+
         if (storedToken) {
             setToken(storedToken);
             setUseremail(storedUseremail || '');
         }
-        
+
         setDarkMode(storedDarkMode);
         document.body.classList.toggle('dark-mode', storedDarkMode);
     }, []);
@@ -53,18 +53,14 @@ const Header = ({ searchTerm, setSearchTerm }) => {
                     {darkMode ? '🌙' : '☀️'}
                 </button>
                 <div className="profile">
-                    {token && (
-                        <>
-                            <div className="profile-icon" onClick={toggleDropdown}>
-                                <span className="profile-icon-placeholder">👤</span>
-                            </div>
-                            {dropdownVisible && (
-                                <ul className="profile-dropdown">
-                                    <li className="profile-dropdown-item">{useremail}</li>
-                                    <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
-                                </ul>
-                            )}
-                        </>
+                    <div className="profile-icon" onClick={toggleDropdown}>
+                        <div className="profile-name" />profile
+                    </div>
+                    {dropdownVisible && (
+                        <ul className="profile-dropdown">
+                            <li className="profile-dropdown-item">{useremail}</li>
+                            <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
+                        </ul>
                     )}
                 </div>
             </div>

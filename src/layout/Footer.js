@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>Created by Your Name | <a href="https://github.com/yourusername/todo-app" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p>Created by BaraniRajeshbabu | <a href="https://github.com/baranirajeshbabu30/To-Do-App" target="_blank" rel="noopener noreferrer">GitHub</a></p>
         </footer>
     );
 };

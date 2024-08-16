@@ -1,5 +1,3 @@
-/* SearchBar.css */
-
 .search-container {
     display: flex;
     justify-content: center; 
@@ -19,12 +17,12 @@
   }
   
   .search-input:focus {
-    border-color: #a8a8a8; /* Darker border on focus */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on focus */
+    border-color: #a8a8a8; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
   
   .search-input::placeholder {
-    color: #a8a8a8; /* Gray color for placeholder text */
-    opacity: 1; /* Ensure placeholder text is visible */
+    color: #a8a8a8; 
+    opacity: 1; 
   }
   

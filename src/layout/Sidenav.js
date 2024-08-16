@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Drawer, List, ListItem, ListItemText, Divider, CircularProgress, Snackbar, Alert } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText, Divider, CircularProgress, Snackbar } from '@mui/material';
 import useTodos from '../hooks/useTodos';
 
 const Sidenav = () => {
   const [openCategory, setOpenCategory] = useState(false);
   const { loading, error } = useTodos();
 
-  // Hardcoded categories
   const categories = [
     { _id: '1', name: 'Work' },
     { _id: '2', name: 'Personal' },
@@ -79,7 +78,6 @@ const Sidenav = () => {
 
       {error && (
         <Snackbar open={!!error} autoHideDuration={6000}>
-          <Alert severity="error">{error}</Alert>
         </Snackbar>
       )}
     </div>

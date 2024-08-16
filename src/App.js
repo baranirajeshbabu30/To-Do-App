@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext';
 import Login from './authentication/Login';
@@ -12,7 +12,6 @@ import Upcoming from './components/Upcoming';
 import Layout from './layout/Homepage';
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <Router>
@@ -24,7 +23,7 @@ const App = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/add-todo" element={<AddTodoForm />} />
           <Route path="/edit-todo/:id" element={<AddTodoForm />} />
-          <Route path="/todo-list" element={<TodoItem searchTerm={searchTerm} />} />
+          <Route path="/todo-list" element={<TodoItem />} />
           <Route path="/category/:category" element={<CategoryFilter />} />
 
           <Route path="/upcoming" element={<Upcoming />} />

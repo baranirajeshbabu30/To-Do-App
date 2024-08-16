@@ -12,16 +12,15 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('/auth/login', { useremail, password });
-            const { token, userId, useremail: responseEmail } = response.data;
+            const {  userId, useremail: responseEmail } = response.data;
 
-            localStorage.setItem('token', token);
             localStorage.setItem('userId', userId);
             localStorage.setItem('useremail', responseEmail);
 
-            navigate('/todo-list'); 
+            navigate('/todo-list');
+            alert('login success') 
         } catch (error) {
             console.error('Login error:', error);
-            alert('Invalid credentials');
         }
     };
 
@@ -54,7 +53,7 @@ const Login = () => {
                     </div>
                     <button type="submit">Login</button>
                 </form>
-                <button onClick={handleSignupClick} className="signup-button">Go to Signup</button>
+               <p>New User Register here <a onClick={handleSignupClick} className="signup-button"> Signup</a></p> 
             </div>
         </div>
     );
